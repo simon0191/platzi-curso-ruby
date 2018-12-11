@@ -12,7 +12,7 @@ def with_threads
   puts "With threads"
   start = Time.now
   threads = 3.times.map { |i| Thread.new { http_call(i) } }
-  #threads.map(&:join)
+  threads.map(&:join)
   puts "Total time: #{Time.now - start} seconds"
   puts "----------------------------------------"
 end
